@@ -1,0 +1,92 @@
+#relaxation calculation with different values of U
+
+#DATASETS AND OPTIONS
+ndtset 11
+getwfk -1
+occopt 3
+fftalg 112
+tsmear 1200 k
+
+
+#Optimization of the lattice parameters
+optcell 2 #optimisation acell, rprim, xred
+ionmov  22 #Conduct structural optimization using the Broyden-Fletcher-Goldfarb-Shanno minimization (BFGS)
+ntime   50
+dilatmx 1.05
+
+
+#CONVERGENCE PARAMETERS
+
+nstep 100
+ecut  20
+pawecutdg 40
+tolmxf  5.0d-5
+toldff 5.0d-6
+ecutsm  0.5
+diemac 12.0
+
+
+#spin parameter
+nsppol 2 
+nspden 2
+nspinor 1
+spinat 0 0 0
+       0 0 0
+       0 0 9
+       0 0 -9
+       0 0 0
+       0 0 0
+       0 0 0
+       0 0 0
+       0 0 0
+       0 0 0
+
+
+#Definition of the atom types
+acell    3*10.578138687231
+
+rprim    0.577350269189626   0.000000000000000   0.829826244422570
+        -0.288675134594813   0.500000000000000   0.829826244422570
+        -0.288675134594813  -0.500000000000000   0.829826244422570
+
+natom    10
+ntypat   3
+typat    1 1 2 2 3 3 3 3 3 3
+znucl    83 26 8
+xred     0.000000000000000   0.000000000000000   0.000000000000000
+         0.500000000000000   0.500000000000000   0.500000000000000
+         0.221250000000000   0.221250000000000   0.221250000000000
+         0.721250000000000   0.721250000000000   0.721250000000000
+         0.401180000000000   0.522080000000000   0.935980000000000
+         0.022080000000000   0.901180000000000   0.435980000000000
+         0.435980000000000   0.022080000000000   0.901180000000000
+         0.901180000000000   0.435980000000000   0.022080000000000
+         0.522080000000000   0.935980000000000   0.401180000000000
+         0.935980000000000   0.401180000000000   0.522080000000000
+
+
+##### K-POINTS
+kptopt 1 
+ngkpt  4 4 4
+nshiftk 1
+shiftk 0.0 0.0 0.0
+istwfk *1
+
+#DFT+U
+usepawu   1
+lpawu   -1 2 -1
+upawu1   0.0 0.0 0.0  ev
+upawu2   0.0 1.0 0.0  ev
+upawu3   0.0 2.0 0.0  ev
+upawu4   0.0 3.0 0.0  ev
+upawu5   0.0 4.0 0.0  ev
+upawu6   0.0 5.0 0.0  ev
+upawu7   0.0 6.0 0.0  ev
+upawu8   0.0 7.0 0.0  ev
+upawu9   0.0 8.0 0.0  ev
+upawu10  0.0 9.0 0.0  ev
+upawu11  0.0 10.0 0.0  ev
+
+jpawu   0.0 0.0 0.0  ev
+
+
