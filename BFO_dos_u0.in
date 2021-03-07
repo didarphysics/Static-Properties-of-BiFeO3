@@ -1,0 +1,80 @@
+#dos calculation with k 16 16 16 with different value of U
+
+#DATASETS AND OPTIONS
+ndtset 2
+getwfk -1
+prtdos2 3 
+occopt 7
+fftalg 112
+tsmear 0.01
+
+
+
+#CONVERGENCE PARAMETERS
+nstep 100
+ecut  20
+pawecutdg 30
+toldfe 1.0d-5
+ecutsm  0.5
+diemac 12.0
+
+
+#spin parameter
+nsppol 2 
+nspden 2
+nspinor 1
+spinat 0 0 0
+       0 0 0
+       0 0 9
+       0 0 -9
+       0 0 0
+       0 0 0
+       0 0 0
+       0 0 0
+       0 0 0
+       0 0 0
+
+
+#Definition of the atom types
+natom 10
+ntypat 3
+typat 1 1 2 2 3 3 3 3 3 3
+
+#Definition of the atoms
+znucl 83 26 8
+
+xred  -6.1177757329E-03 -6.1177757329E-03 -6.1177757329E-03
+       4.9388222427E-01  4.9388222427E-01  4.9388222427E-01
+       2.1823303047E-01  2.1823303047E-01  2.1823303047E-01
+       7.1823303047E-01  7.1823303047E-01  7.1823303047E-01
+       3.9554895751E-01  5.3058340615E-01  9.4224238161E-01
+       3.0583406146E-02  8.9554895751E-01  4.4224238161E-01
+       4.4224238161E-01  3.0583406146E-02  8.9554895751E-01
+       8.9554895751E-01  4.4224238161E-01  3.0583406146E-02
+       5.3058340615E-01  9.4224238161E-01  3.9554895751E-01
+       9.4224238161E-01  3.9554895751E-01  5.3058340615E-01
+
+acell    3*10.474661896 
+
+rprim    5.7564472820E-01  2.7492485786E-20  8.1769991250E-01
+        -2.8782236410E-01  4.9852295817E-01  8.1769991250E-01
+        -2.8782236410E-01 -4.9852295817E-01  8.1769991250E-01
+
+
+
+
+##### K-POINTS
+kptopt 1 
+ngkpt1 2 2 2
+ngkpt2  16 16 16
+nshiftk 1
+shiftk 0.5 0.5 0.5
+istwfk *1
+
+#DFT+U
+usepawu   1
+lpawu   -1 2 -1
+upawu   0.0 0.0 0.0  ev
+jpawu   0.0 0.0 0.0  ev
+
+

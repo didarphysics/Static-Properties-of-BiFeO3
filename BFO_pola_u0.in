@@ -1,0 +1,79 @@
+#polarization and berry phase calculation for different value of U
+
+#DATASETS AND OPTIONS
+ndtset 2
+getwfk -1
+occopt 3 
+tsmear  1200 k
+dilatmx 1.05
+ecutsm  0.5
+
+# Berry phase calculation of the polarization
+
+berryopt2 4
+rfdir2 1 1 1
+symmorphi 0
+nband2 49 # for berryopt 4 nband must be equal to valence band
+#nbdbuf2 0
+
+#CONVERGENCE PARAMETERS
+nstep 100
+ecut  20
+pawecutdg 30
+toldfe 1.0d-6
+diemac 12.0
+
+
+#spin parameter
+nsppol 2  
+#spinmagntarget 0.0d0 #if one want to use occ 1 and berryopt -1
+nspden 2
+nspinor 1
+spinat 0 0 0
+       0 0 0
+       0 0 9
+       0 0 -9
+       0 0 0
+       0 0 0
+       0 0 0
+       0 0 0
+       0 0 0
+       0 0 0
+
+
+#Definition of the atom types
+natom 10
+ntypat 3
+typat 1 1 2 2 3 3 3 3 3 3
+
+#Definition of the atoms
+znucl 83 26 8
+
+            acell      3*10.313642227
+            rprim      5.7953468474E-01  0.0000000000E+00  8.1494757450E-01
+                      -2.8976734237E-01  5.0189175936E-01  8.1494757450E-01
+                      -2.8976734237E-01 -5.0189175936E-01  8.1494757450E-01
+             xred     -6.0279072957E-03 -6.0279072957E-03 -6.0279072957E-03
+                       4.9397209270E-01  4.9397209270E-01  4.9397209270E-01
+                       2.2397105333E-01  2.2397105333E-01  2.2397105333E-01
+                       7.2397105333E-01  7.2397105333E-01  7.2397105333E-01
+                       3.9172883634E-01  5.3475676732E-01  9.3606125031E-01
+                       3.4756767316E-02  8.9172883634E-01  4.3606125031E-01
+                       4.3606125031E-01  3.4756767316E-02  8.9172883634E-01
+                       8.9172883634E-01  4.3606125031E-01  3.4756767316E-02
+                       5.3475676732E-01  9.3606125031E-01  3.9172883634E-01
+                       9.3606125031E-01  3.9172883634E-01  5.3475676732E-01
+
+##### K-POINTS
+kptopt 1
+ngkpt 4 4 4
+shiftk 0.0 0.0 0.0
+istwfk *1
+
+
+#DFT+U
+usepawu   1
+lpawu   -1 2 -1
+upawu   0.0 0.0 0.0  ev
+jpawu   0.0 0.0 0.0  ev
+
