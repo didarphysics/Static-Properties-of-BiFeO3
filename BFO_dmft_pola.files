@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-BFO_pola_u0.in
-BFO_pola_u0.out
-BFO_pola0i
-BFO_pola0o
-BFO_pola0
-Bi.GGA_PBE-JTH.xml
-Fe.GGA_PBE-JTH.xml
-O.GGA_PBE-JTH.xml
-=======
 BFO_dmft_pola1.in
 BFO_dmft_pola1.out
 BFO_pola1i
@@ -16,6 +6,4 @@ BFO_pola1
 Bi.LDA_PW-JTH.xml
 Fe.LDA_PW-JTH.xml
 O.LDA_PW-JTH.xml
-
->>>>>>> 248fbcf7bf9efe97c4aada9ab4e7b7a954da9d17
 
